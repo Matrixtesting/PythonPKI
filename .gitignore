@@ -1,0 +1,202 @@
+```gitignore
+# ============================================================================
+# mbedtls-test .gitignore
+#
+# Repository policy:
+#   Commit source code, CMake configuration, small helper scripts, and docs.
+#   Do not commit downloaded toolchains, third-party source trees, build
+#   output, logs, debug captures, IDE state, or private credentials.
+# ============================================================================
+
+
+# ----------------------------------------------------------------------------
+# Project-local development toolchain
+# ----------------------------------------------------------------------------
+
+/tools/
+
+GitSetupLocal.bat
+GHInitSync.bat
+
+# ----------------------------------------------------------------------------
+# Downloaded third-party source
+#
+# Mbed TLS is obtained by SetupEnv_Secure_v4.bat and pinned there.
+# Keep the upstream source tree out of this repository.
+# ----------------------------------------------------------------------------
+
+/external/mbedtls/
+
+
+# ----------------------------------------------------------------------------
+# Build output
+# ----------------------------------------------------------------------------
+
+/out/
+/build/
+/Build/
+/cmake-build-*/
+
+
+# CMake-generated files if CMake is ever run in the source tree
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+Makefile
+build.ninja
+.ninja_deps
+.ninja_log
+compile_commands.json
+
+
+# ----------------------------------------------------------------------------
+# Compiled objects and binaries
+# ----------------------------------------------------------------------------
+
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.exe
+*.exp
+*.ilk
+*.pdb
+*.idb
+*.map
+*.elf
+*.hex
+*.bin
+*.lst
+
+
+# ----------------------------------------------------------------------------
+# Visual Studio generated files
+# ----------------------------------------------------------------------------
+
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+ipch/
+Debug/
+Release/
+x64/
+x86/
+
+
+# ----------------------------------------------------------------------------
+# VS Code local workspace state
+#
+# Remove this rule later if shared VS Code launch/build configuration becomes
+# part of the repository.
+# ----------------------------------------------------------------------------
+
+.vscode/
+
+
+# ----------------------------------------------------------------------------
+# Python generated files / environments
+# ----------------------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+.venv/
+venv/
+env/
+
+.pytest_cache/
+.mypy_cache/
+
+
+# ----------------------------------------------------------------------------
+# Bootstrap/install logs
+# ----------------------------------------------------------------------------
+
+install log.txt
+CurrentDebugRun.txt
+*.log
+
+
+# ----------------------------------------------------------------------------
+# TLS / HTTP development output
+# ----------------------------------------------------------------------------
+
+HttpsResponseDebug.txt
+HttpsResponseDebug*.txt
+
+*.pcap
+*.pcapng
+
+
+# ----------------------------------------------------------------------------
+# Downloaded CA trust bundle
+#
+# This file should ultimately be downloaded and SHA-256 verified by the
+# bootstrap process rather than stored in Git.
+# ----------------------------------------------------------------------------
+
+/certs/cacert.pem
+
+
+# ----------------------------------------------------------------------------
+# NEVER COMMIT PRIVATE KEYS OR PASSWORD-CONTAINING CERTIFICATE CONTAINERS
+# ----------------------------------------------------------------------------
+
+*.key
+*.key.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+/certs/private/
+
+
+# ----------------------------------------------------------------------------
+# Temporary/download/archive files
+# ----------------------------------------------------------------------------
+
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.swp
+*.swo
+*~
+
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.msi
+
+
+# ----------------------------------------------------------------------------
+# Windows filesystem debris
+# ----------------------------------------------------------------------------
+
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+
+
+# ----------------------------------------------------------------------------
+# Miscellaneous editor/OS files
+# ----------------------------------------------------------------------------
+
+.DS_Store
+*.code-workspace
+```

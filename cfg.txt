@@ -1,0 +1,35 @@
+[PATHS]
+base_dir = enterprise_pki
+
+
+[ROOT_CA]
+country = US
+organization = Mbed TLS Test Lab
+common_name = Mbed TLS Test Root CA
+key_bits = 3072
+valid_days = 3650
+
+
+[SERVER]
+country = US
+organization = Mbed TLS Test Lab
+common_name = localhost
+
+key_bits = 2048
+valid_days = 825
+
+san_dns = localhost
+san_ip = 127.0.0.1
+
+
+[CLIENT]
+country = US
+organization = Mbed TLS Test Lab
+common_name = test-client-001
+
+key_bits = 2048
+valid_days = 825
+
+san_email = test-client-001@lab.local
+
+p12_password = ChangeThisTestPassword
